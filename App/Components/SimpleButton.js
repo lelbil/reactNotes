@@ -4,9 +4,11 @@ import {
     View,
     TouchableOpacity,
     StyleSheet,
-} from 'react-native';
+} from 'react-native'
 
-export default class SimpleButton extends React.Component {
+import NoteList from './NoteList'
+
+export default class SimpleButton extends Component {
     render () {
         const { navigate } = this.props.navigation
 
@@ -17,7 +19,7 @@ export default class SimpleButton extends React.Component {
                         <Text style={styles.simpleButtonText}>New Note</Text>
                     </View>
                 </TouchableOpacity>
-                <Text style={styles.noNotesText}>No Notes Found ( Yet! )</Text>
+                <NoteList navigation={this.props.navigation}/>
             </View>
         )
     }
